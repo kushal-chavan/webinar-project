@@ -56,7 +56,7 @@ class WebinarController extends Controller
         $live->webinar_link = $request->input('webinar_link');
         $live->webinar_status = $request->input('webinar_status');
         $live->save();
-        return redirect('adminarea/start_webinar')->with('webinar', 'Added to webinar session');
+        return redirect('adminarea/start_webinar')->with('webinar', 'Member is Added to webinar session');
     }
 
     public function create(Request $request)

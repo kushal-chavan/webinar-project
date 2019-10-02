@@ -12,7 +12,7 @@
           </ol>
             <!-- Example DataTables Card-->
           <div class="row">
-            <div class="col-md-6"> 
+            <div class="col-md-12"> 
               <div class="card mb-3">
                 <div class="card-header">
                   <i class="fa fa-table"></i> Enrolled Users</div>
@@ -44,14 +44,20 @@
                                   <div class="row">
                                       <div class="col-md-12">
                                           <div class="form-group">
-                                              <select type="text" name="webinar_name" class="form-control" placeholder="Course title">
+                                              <select type="text" name="webinar_id" class="form-control" placeholder="Course title">
                                                       <option value="">Choose...</option>
                                                       @foreach ($w_courses as $item)
                                                           <option value="{{$item->id}}">{{$item->course_name}}</option>
                                                       @endforeach
                                               </select>
-                                              <input type="hidden" name="user_id" value="{{$user->id}}">
-                                          </div>
+                                            </div>
+                                              <input type="hidden" name="user_id" value="{{$user->user_id}}">
+                                              @foreach ($w_courses as $item)
+                                              <input type="hidden" name="course_name" value="{{$item->course_name}}">
+                                              <input type="hidden" name="webinar_link" value="{{$item->webinar_link}}">
+                                              <input type="hidden" name="webinar_status" value="{{$item->webinar_status}}">
+                                              @endforeach
+                                          
                                           <button class="btn btn-success float-left" type="submit">Add</button>
                                       </div>
                                   </div>        
@@ -74,7 +80,7 @@
               <!-- /tables-->
         </div><!-- /col-->
         
-        <div class="col-md-6"> 
+        <div class="col-md-12"> 
             <div class="card mb-3">
               <div class="card-header">
                 <i class="fa fa-table"></i> Members For Webinar</div>
