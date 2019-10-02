@@ -41,4 +41,8 @@ class User extends Authenticatable
     public function mycourses(){
         return $this->hasMany('App\CourseEnroll');
     }
+
+    public function livemember(){
+        return $this->hasMany('App\LiveWebinar');
+    }
 }
