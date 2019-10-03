@@ -19,7 +19,7 @@ Route::get('/contact', 'PagesController@contact');
 Route::post('/postcontact', 'PagesController@postcontact');
 Route::get('/courses', 'PagesController@courses');
 
-
+// Middleware for only Admin
 Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
 {
     Route::get('/adminarea', 'AdminController@index')->name('adminarea');
@@ -45,12 +45,13 @@ Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
     Route::get('/adminarea/callme', 'SupportController@callme');
     Route::post('/adminarea/callme/{id}', 'SupportController@call');
 
-    // Change Password AT Adminarea
+    // Change Password Adminarea
     Route::get('/adminarea/changepassword', 'AdminController@changepassword');
     Route::post('/adminarea/changepassword','AdminController@passwordchange')->name('passwordchange');
 
 });
 
+// For Member or User
 Route::group(['middleware' => 'App\Http\Middleware\MemberMiddleware'], function()
 {
     Route::get('/home', 'HomeController@index')->name('home');

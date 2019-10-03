@@ -31,10 +31,9 @@ class HomeController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        $webinar = Webinar::all();
         return view('home')
         ->with('mycourses', $user->mycourses)
-        ->with('webinar', $webinar);
+        ->with('livemember', $user->livemember);
     }
 
     public function profile()

@@ -42,10 +42,10 @@
         </div>
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header bg-primary text-white">Message</div>
+                <div class="card-header bg-primary text-white">Activity</div>
                 <div class="card-body">
-                  @if(count($webinar) > 0)
-                    @foreach ($webinar as $live)
+                  @if(count($livemember) > 0)
+                    @foreach ($livemember as $live)
                     <div class="card mt-3">
                         <div class="card-body">
                           <h5 class="card-title">{{$live->course_name}}</h5>
@@ -56,7 +56,7 @@
                       </div>
                       @endforeach
                   @else 
-                    <p>No Messages</p>
+                    <p>No Activity</p>
                   @endif
                 </div>
             </div>
