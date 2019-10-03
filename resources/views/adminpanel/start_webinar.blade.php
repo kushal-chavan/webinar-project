@@ -14,7 +14,7 @@
           <div class="row">
             <div class="col-md-12"> 
               <div class="card mb-3">
-                <div class="card-header">
+                <div class="card-header bg-success text-white">
                   <i class="fa fa-table"></i> Enrolled Users</div>
                 <div class="card-body">
                     @include('notification')
@@ -42,7 +42,7 @@
                                     @endforeach
                                       @csrf
                                   <div class="row">
-                                      <div class="col-md-12">
+                                      <div class="col-md-9">
                                           <div class="form-group">
                                               <select type="text" name="webinar_id" class="form-control" placeholder="Course title">
                                                       <option value="">Choose...</option>
@@ -52,12 +52,14 @@
                                               </select>
                                             </div>
                                               <input type="hidden" name="user_id" value="{{$user->user_id}}">
+                                              <input type="hidden" name="member_name" value="{{$user->membername}}">
                                               @foreach ($w_courses as $item)
                                               <input type="hidden" name="course_name" value="{{$item->course_name}}">
                                               <input type="hidden" name="webinar_link" value="{{$item->webinar_link}}">
                                               <input type="hidden" name="webinar_status" value="{{$item->webinar_status}}">
                                               @endforeach
-                                          
+                                      </div>
+                                              <div class="col-md-3">
                                           <button class="btn btn-success float-left" type="submit">Add</button>
                                       </div>
                                   </div>        
@@ -82,10 +84,10 @@
         
         <div class="col-md-12"> 
             <div class="card mb-3">
-              <div class="card-header">
+              <div class="card-header bg-primary text-white">
                 <i class="fa fa-table"></i> Members For Webinar</div>
               <div class="card-body">
-                  @if(count($users) > 0)
+                  @if(count($add) > 0)
                 <div class="table-responsive">
                   <table class="table table-bordered">
                     <thead>
@@ -97,13 +99,13 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($users as $user)
+                      @foreach ($add as $member)
                           <tr>
-                              <td>{{$user->membername}}</td>
-                              <td>{{$user->reg_id}}</td>
-                              <td>{{$user->name}}</td>
+                              <td>{{$member->member_name}}</td>
+                              <td>{{$member->course_name}}</td>
+                              <td>{{$member->webinar_status}}</td>
                               <td>
-                                  <form method="POST" action={{ action('AdminController@deletecourse', [$user->id]) }}>
+                                  <form method="POST" action={{ action('WebinarController@removemember', [$member->id]) }}>
                                       @csrf
                                       <input type="hidden" name="_method" value="DELETE">
                                       <button class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit">Remove</button>
@@ -117,7 +119,7 @@
                 </div>
                 @else 
                 <div class="alert alert-warning" role="alert">
-                <h2>No Webinar is runing</h2>
+                <h3>No members</h3>
                 </div>
                 @endif
               </div>

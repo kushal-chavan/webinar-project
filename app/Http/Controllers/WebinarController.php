@@ -8,6 +8,7 @@ use App\User;
 use App\Webinar;
 use App\LiveWebinar;
 use App\CourseEnroll;
+use DB;
 
 
 class WebinarController extends Controller
@@ -33,8 +34,10 @@ class WebinarController extends Controller
     {
         $users = CourseEnroll::all();
         $w_courses = Webinar::all();
+        $add = LiveWebinar::all();
         return view('adminpanel.start_webinar')
         ->with('users', $users)
+        ->with('add', $add)
         ->with('w_courses', $w_courses);
     }
 
@@ -43,20 +46,34 @@ class WebinarController extends Controller
         $this->validate($request, [
             'webinar_id' => 'required',
             'user_id' => 'required',
+            'member_name' => 'required',
             'course_name' => 'required',
             'webinar_link' => 'required',
             'webinar_status' => 'required',
         ]            
         );
+        $exists = DB::table('live_webinar')->where('user_id', $request->input('user_id'))->where('member_name',  $request->input('member_name'))->first();
+        if(!$exists){
         $update = Webinar::find($id);
         $live = new LiveWebinar;
         $live->webinar_id = $request->input('webinar_id');
         $live->user_id = $request->input('user_id');
+        $live->member_name = $request->input('member_name');
         $live->course_name = $request->input('course_name');
         $live->webinar_link = $request->input('webinar_link');
         $live->webinar_status = $request->input('webinar_status');
         $live->save();
         return redirect('adminarea/start_webinar')->with('webinar', 'Member is Added to webinar session');
+        } else {
+            return redirect('adminarea/start_webinar')->with('webinar', $request->input('member_name').' is already in webinar');
+        }
+    }
+    // Remove Member from webinar Session
+    public function removemember($id)
+    {
+        $delete = LiveWebinar::find($id);
+        $delete->delete();
+        return redirect('/adminarea/start_webinar')->with('webinardeleted', 'Member Removed Successfully');
     }
 
     public function create(Request $request)
@@ -84,4 +101,5 @@ class WebinarController extends Controller
         $delete->delete();
         return redirect('/adminarea/mywebinar')->with('webinardeleted', 'Webinar Deleted Successfully');
     }
+
 }

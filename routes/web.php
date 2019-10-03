@@ -36,6 +36,7 @@ Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
     Route::post('/adminarea/webinar', 'WebinarController@create');
     Route::post('/adminarea/start_webinar/{id}', 'WebinarController@addtowebinar');
     Route::get('/adminarea/start_webinar', 'WebinarController@start');
+    Route::delete('/adminarea/start_webinar/{id}', 'WebinarController@removemember');
     Route::get('/adminarea/mywebinar', 'WebinarController@mywebinar');
     Route::delete('/adminarea/webinar/{id}', 'WebinarController@deletewebinar');
     // Supports

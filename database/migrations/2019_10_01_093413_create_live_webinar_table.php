@@ -17,6 +17,7 @@ class CreateLiveWebinarTable extends Migration
             $table->bigIncrements('id');
             $table->string('webinar_id');
             $table->string('user_id');
+            $table->string('member_name');
             $table->string('course_name');
             $table->string('webinar_link');
             $table->string('webinar_status');
