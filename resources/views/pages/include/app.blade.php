@@ -45,7 +45,7 @@
 		</div>
 		@guest
 		<ul id="top_menu">
-				<li><a href="{{ url('/login') }}">Login</a></li>
+				<li class="hidden_tablet"><a href="{{ url('/login') }}">Login</a></li>
 				<li class="hidden_tablet"><a href="{{ url('/register') }}" class="btn_1 rounded">Registration</a></li>
 			</ul>
 		@else
@@ -67,6 +67,8 @@
                 <li><span><a href="{{ url('/') }}">Home</a></span>
 				</li>
 				<li><span><a href="{{ url('/about') }}">About Us</a></span>
+				</li>
+				<li><span><a href="{{ url('/consulting') }}">Consulting</a></span>
 				</li>
 				<li><span><a href="{{ url('/courses') }}">Courses</a></span>
 				</li>
@@ -114,7 +116,7 @@
 					<h5>Contact with Us</h5>
 					<ul class="contacts">
 						<li><a href="tel://61280932400"><i class="ti-mobile"></i> + 91 9885054740</a></li>
-						<li><a href="mailto:info@udema.com"><i class="ti-email"></i> info@gshatech.com</a></li>
+						<li><a href="mailto:info@gshatech.com"><i class="ti-email"></i> info@gshatech.com</a></li>
 					</ul>
 					<div id="newsletter">
 					<h6>Newsletter</h6>

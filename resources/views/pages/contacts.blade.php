@@ -1,7 +1,5 @@
 @extends('pages/include/app')
 @section('content')
-	
-
 		<section id="hero_in" class="contacts">
 			<div class="wrapper">
 				<div class="container">
@@ -10,7 +8,6 @@
 			</div>
 		</section>
 		<!--/hero_in-->
-
 		<div class="contact_info">
 			<div class="container">
 				<ul class="clearfix">
@@ -28,7 +25,7 @@
 					<li>
 						<i class="pe-7s-phone"></i>
 						<h4>Contacts info</h4>
-						<span>040-42002002, 9885054740<br><small>Monday to Saturday 9am - 7pm</small></span>
+						<span>+91 9885054740<br><small>24/7 available</small></span>
 					</li>
 				</ul>
 			</div>

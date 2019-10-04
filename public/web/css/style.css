@@ -5573,7 +5573,7 @@ ul.bullets li:before {
     padding-top: 5px;
     padding-bottom: 5px;
   }
-}
+} 
 
 @media (max-width: 991px) {
   .hidden_tablet {
