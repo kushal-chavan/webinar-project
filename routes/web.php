@@ -11,7 +11,7 @@
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
@@ -54,12 +54,12 @@ Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
 // For Member or User
 Route::group(['middleware' => 'App\Http\Middleware\MemberMiddleware'], function()
 {
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/support', 'SupportController@support');
-    Route::post('/support', 'SupportController@sendsupport');
-    Route::post('/callrequest', 'SupportController@callrequest');
+    Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+    Route::get('/support', 'SupportController@support')->middleware('verified');
+    Route::post('/support', 'SupportController@sendsupport')->middleware('verified');
+    Route::post('/callrequest', 'SupportController@callrequest')->middleware('verified');
     Route::get('/profile', 'HomeController@profile')->name('profile');
-    Route::post('/courses/{id}', 'EnrollController@enroll')->name('enroll');
+    Route::post('/courses/{id}', 'EnrollController@enroll')->name('enroll')->middleware('verified');
     // user password change
     Route::get('/changepassword', 'HomeController@changepassworduser')->name('changepassworduser');
     Route::post('/changepassword','HomeController@passwordchangeuser')->name('passwordchangeuser');
