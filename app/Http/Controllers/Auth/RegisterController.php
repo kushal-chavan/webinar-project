@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -64,7 +65,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'phonenumber' => $data['phonenumber'],
@@ -72,5 +73,15 @@ class RegisterController extends Controller
             'Role' => 0,
             'password' => Hash::make($data['password']),
         ]);
+
+        //sent mail if new user registered
+        Mail::send('emails.UserRegistered', $data, function($message) use ($data)
+        {
+            $message->subject("New User Is Registered with us");
+            $message->to('kushal.chavan120@gmail.com');
+        });
+
+        return $user;
+
     }
 }
