@@ -25,6 +25,7 @@
                       <th>Users ID</th>
                       <th>Email</th>
                       <th>Contact Number</th>
+                      <th>Verified on</th>
                       <th>Registered on</th>
                     </tr>
                   </thead>
@@ -35,6 +36,10 @@
                             <td>{{$user->userid}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->phonenumber}}</td>
+                            <td>@if($user->email_verified_at == NULL) <span style="color:red;">Not Verified</span>
+                                @else {{$user->email_verified_at}}
+                                @endif
+                            </td>
                             <td>{{$user->created_at}}</td>
                             {{-- <td>
                                 <div class="btn-group">

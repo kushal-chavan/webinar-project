@@ -35,15 +35,18 @@
                             <td>{{$course->name}}</td>
                             <td>{{$course->description}}</td>
                             <td>{{$course->time}}</td>
-                            <td>
-                                <div class="btn-group">
-                                    <a href="#" class="btn btn-success">Edit</a>
+                            <td> <button 
+                                      type="button" 
+                                      class="btn btn-success" 
+                                      data-toggle="modal" 
+                                      data-target="#viewModal{{ $course->id}}">
+                                      <i class="fa fa-fw fa-pencil-square-o"></i>
+                                    </button>
                                     <form method="POST" action={{ action('AdminController@deletecourse', [$course->id]) }}>
                                         @csrf
                                         <input type="hidden" name="_method" value="DELETE">
-                                        <button class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit">Delete</button>
+                                        <button class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit"><i class="fa fa-fw fa-window-close"></i></button>
                                      </form>
-                                </div>
                               </td>
                         </tr>
                     @endforeach
@@ -65,3 +68,58 @@
            </div>
         <!-- /container-wrapper-->
 @endsection
+@foreach ($courses as $course)
+<div class="modal fade" id="viewModal{{ $course->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit {{$course->name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="">
+          @csrf
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                      <label>Course Category</label>
+                      <input type="text" name="course_category" class="form-control" value="{{$course->category}}">
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Course title</label>
+                    <input type="text" name="course_title" class="form-control" value="{{$course->name}}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Course time</label>
+                    <input type="text" name="course_time" class="form-control" value="{{$course->time}}">
+                </div>
+            </div>
+        </div>
+          <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Course description</label>
+                    <textarea rows="5" type="text" name="course_description" class="form-control">{{$course->description}}</textarea>
+                </div>
+            </div>
+        </div>
+        <button type="submit" name="submit" class="btn btn-primary" data-dismiss="modal">Save</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+@endforeach
