@@ -30,7 +30,14 @@
 
     <!-- SPECIFIC CSS -->
     <link href="web/layerslider/css/layerslider.css" rel="stylesheet">
+<style>
+@media (min-width:800px){
+	.mobview{
+		display: none !important;
+	}
+}
 
+</style>
 
 </head>
 
@@ -75,6 +82,10 @@
 				<li><span><a href="{{ url('/') }}">Webinars</a></span>
 				</li>
 				<li><span><a href="{{ url('/contact') }}">Contact</a></span>
+				</li>
+				<li class="mobview"><span><a href="{{ url('/login') }}">Login</a></span>
+				</li>
+				<li class="mobview"><span><a href="{{ url('/register') }}">Register</a></span>
 				</li>
 			</ul>
 		</nav>

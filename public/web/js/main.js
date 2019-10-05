@@ -41,7 +41,7 @@
 		navbar: {
 			title: 'MENU'
 		},
-		navbars: [{position:'bottom',content: ['<a href="#0">© 2019 Gsha Technology</a>']}]}, 
+		navbars: [{position:'bottom',content: ['<a href="#0">© 2019 Gsha Technologies</a>']}]}, 
 		{
 		// configuration
 		clone: true,

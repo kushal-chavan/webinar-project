@@ -63,7 +63,7 @@ class AdminController extends Controller
             // Upload Image
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
         } else {
-            $fileNameToStore = 'noimage.jpg';
+            $fileNameToStore = 'noimage.jpeg';
         }
 
         //create
