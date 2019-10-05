@@ -18,6 +18,7 @@ Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
 Route::post('/postcontact', 'PagesController@postcontact');
 Route::get('/courses', 'PagesController@courses');
+Route::get('/consulting', 'PagesController@consulting');
 
 // Middleware for only Admin
 Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()

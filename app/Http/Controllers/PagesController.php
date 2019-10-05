@@ -26,6 +26,11 @@ class PagesController extends Controller
         return view('pages/about');
     }
 
+    public function consulting()
+    {
+        return view('pages/consulting');
+    }
+
     public function courses()
     {
         $courses = Courses::all();
