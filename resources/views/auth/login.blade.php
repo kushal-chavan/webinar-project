@@ -4,9 +4,14 @@
 
 
     
-<div class="container" style="margin-top:300px;margin-bottom:200px;">
+<div class="container" style="margin-top:100px;margin-bottom:200px;">
 
-      
+    <div class="box_grid wow"
+    style="
+    padding-bottom:50px;
+    padding-top:50px;
+    padding-left: 50px;
+    padding-right: 50px;">
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
@@ -52,6 +57,6 @@
                     
             </div>
     </form>
-                
+</div>   
 </div>
 @endsection

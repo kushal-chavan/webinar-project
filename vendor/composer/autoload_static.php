@@ -408,6 +408,7 @@ class ComposerStaticInit095f4e471f979feeb2034ff74b82aafa
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Jobs\\MailEnrollJob' => __DIR__ . '/../..' . '/app/Jobs/MailEnrollJob.php',
+        'App\\LiveWebinar' => __DIR__ . '/../..' . '/app/LiveWebinar.php',
         'App\\Mail\\SendEnroll' => __DIR__ . '/../..' . '/app/Mail/SendEnroll.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

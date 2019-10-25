@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Courses;
+use App\Content;
 use App\CourseEnroll;
 use Mail;
 
@@ -28,7 +29,8 @@ class PagesController extends Controller
 
     public function consulting()
     {
-        return view('pages/consulting');
+        $content = Content::all();
+        return view('pages/consulting')->with('content', $content);
     }
 
     public function courses()

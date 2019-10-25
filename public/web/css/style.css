@@ -37,6 +37,7 @@
 /*-------- Main navigation --------*/
 /* All styles for screen size over 992px
 ================================================== */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 @media only screen and (min-width: 992px) {
   nav#menu.main-menu {
     display: block !important;
@@ -321,7 +322,8 @@ body {
   background: #f8f8f8;
   font-size: 0.875rem;
   line-height: 1.6;
-  font-family: "Poppins", Helvetica, sans-serif;
+  /* font-family: "Poppins", Helvetica, sans-serif; */
+  font-family: 'Playfair Display', serif;
   color: #555;
 }
 
