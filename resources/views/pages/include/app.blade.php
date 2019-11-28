@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>GSHATECH</title>
+    <title>gsha technologies</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="web/img/favicon.ico" type="image/x-icon">
@@ -48,7 +48,7 @@
 	<header class="header menu_2 sticky">
 		<div id="preloader"><div data-loader="circle-side"></div></div><!-- /Preload -->
 		<div id="logo">
-			<a href="{{ url('/') }}"><h2 style="color:#fff">GSHATECH</h2></a>
+			<a href="{{ url('/') }}"><h2 style="color:#fff">Gsha Technologies</h2></a>
 		</div>
 		@guest
 		<ul id="top_menu">
@@ -79,7 +79,7 @@
 				</li>
 				<li><span><a href="{{ url('/courses') }}">Courses</a></span>
 				</li>
-				<li><span><a href="{{ url('/') }}">Webinars</a></span>
+				<li><span><a href="{{ url('/webinars') }}">Webinars</a></span>
 				</li>
 				<li><span><a href="{{ url('/contact') }}">Contact</a></span>
 				</li>
@@ -99,7 +99,7 @@
 		<div class="container margin_120_95">
 			<div class="row">
 				<div class="col-lg-5 col-md-12 p-r-5">
-					<h2 style="color:#fff">GSHATECH</h2>
+					<h2 style="color:#fff">Gsha Technologies</h2>
 					<p>Gsha Technologies works with the best Consultants to ensure students are equipped with the necessary
 							knowledge to enter and succeed in the SAP market and beyond.</p>
 					<div class="follow_us">

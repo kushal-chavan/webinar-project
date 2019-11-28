@@ -18,13 +18,17 @@
                  <div class="col-md-6">
                 @include('notification')
                  </div></div>
-            <form method="POST" action="{{ url('/adminarea/addcourse') }}" enctype="multipart/form-data">
+            <form method="POST" action={{ action('AdminController@update_consulting', [$con->id]) }}>
                     @csrf
                 <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
+                                <label>Page Title</label>
+                            <input name="title" class="form-control" value="{{$con->title}}" autocomplete="off">
+                            </div>
+                            <div class="form-group">
                                 <label>Page Content</label>
-                            <textarea rows="9" name="coursedes" class="form-control" placeholder="Description">{{$con->data}}</textarea>
+                            <textarea rows="9" name="data" class="form-control">{{$con->data}}</textarea>
                             </div>
                         </div>
                     </div>

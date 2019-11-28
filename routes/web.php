@@ -19,6 +19,7 @@ Route::get('/contact', 'PagesController@contact');
 Route::post('/postcontact', 'PagesController@postcontact');
 Route::get('/courses', 'PagesController@courses');
 Route::get('/consulting', 'PagesController@consulting');
+Route::get('/webinars', 'PagesController@webinars');
 
 // Middleware for only Admin
 Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
@@ -28,6 +29,7 @@ Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
     Route::get('/adminarea/enrolledusers', 'AdminController@enrolledusers');
     Route::get('/adminarea/courses', 'AdminController@courses');
     Route::get('/adminarea/mypages/consulting', 'AdminController@mypages_consulting');
+    Route::post('/adminarea/mypages/consulting/{id}', 'AdminController@update_consulting');
     Route::get('/adminarea/addcourse', 'AdminController@addcourse');
     Route::get('/adminarea/profile', 'AdminController@profile');
     Route::post('/adminarea/addcourse', 'AdminController@postcourse');

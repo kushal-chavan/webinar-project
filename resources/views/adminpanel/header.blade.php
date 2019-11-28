@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Ansonika">
-  <title>GSHATECH - Admin dashboard</title>
+  <title>Gsha Technologies - Admin dashboard</title>
 	
   <!-- Favicons-->
   <link rel="shortcut icon" href="admin/img/favicon.ico" type="image/x-icon">
@@ -35,7 +35,7 @@
 <body class="fixed-nav sticky-footer" id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-default fixed-top" id="mainNav">
-          <a class="navbar-brand" href="index.html" style="font-size:27px">GSHATECH</a>
+          <a class="navbar-brand" href="{{ url('/adminarea') }}" style="font-size:27px">Gsha Technologies</a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

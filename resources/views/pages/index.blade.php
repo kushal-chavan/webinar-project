@@ -54,7 +54,7 @@
 		<div class="container-fluid margin_120_0">
 			<div class="main_title_2">
 				<span><em></em></span>
-				<h2>GshaTech Popular Courses</h2>
+				<h2>Gsha Technologies Popular Courses</h2>
 				<p>We focus on your success</p>
 			</div>
 			<div id="reccomended" class="owl-carousel owl-theme">
@@ -62,7 +62,7 @@
 				<div class="item">
 					<div class="box_grid">
 						<figure>
-							<a href="#0" class="wish_bt"></a>
+							
 							<a href="#0">
 								<div class="preview">
 								</div><img src="storage/cover_images/{{$course->cover_image}}" class="img-fluid" alt="{{$course->name}}"></a>

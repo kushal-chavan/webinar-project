@@ -26,6 +26,10 @@ class PagesController extends Controller
     {
         return view('pages/about');
     }
+    public function webinars()
+    {
+        return view('pages/webinars');
+    }
 
     public function consulting()
     {

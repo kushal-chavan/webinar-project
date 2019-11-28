@@ -156,4 +156,18 @@ class AdminController extends Controller
         $con = Content::findOrfail($id);
         return view('adminpanel.mypages.consulting')->with('con', $con);
     }
+
+    public function update_consulting(Request $request, $id){
+        $this->validate($request, [
+            'title' => 'required',
+            'data' => 'required',
+        ]);
+    
+        $update = Content::findOrfail($id);
+        $update->title = $request->input('title');
+        $update->data = $request->input('data');
+        $update->save();
+
+        return redirect('/adminarea/mypages/consulting')->with('cpsuccess', 'Page Content updated');
+    }
 }

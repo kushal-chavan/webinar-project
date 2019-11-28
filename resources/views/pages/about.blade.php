@@ -133,42 +133,36 @@
 					<a class="box_feat" href="#">
 						<i class="pe-7s-diamond"></i>
 						<h3>Qualified teachers</h3>
-						<p>Id mea congue dictas, nec et summo mazim impedit. Vim te audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<a class="box_feat" href="#">
 						<i class="pe-7s-display2"></i>
 						<h3>Equiped class rooms</h3>
-						<p>Id mea congue dictas, nec et summo mazim impedit. Vim te audiam impetus interpretaris, cum no alii option, cu sit mazim libris. </p>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<a class="box_feat" href="#">
 						<i class="pe-7s-science"></i>
 						<h3>Advanced teaching</h3>
-						<p>Id mea congue dictas, nec et summo mazim impedit. Vim te audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<a class="box_feat" href="#">
 						<i class="pe-7s-rocket"></i>
 						<h3>Adavanced study plans</h3>
-						<p>Id mea congue dictas, nec et summo mazim impedit. Vim te audiam impetus interpretaris, cum no alii option, cu sit mazim libris. </p>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<a class="box_feat" href="#">
 						<i class="pe-7s-target"></i>
 						<h3>Focus on target</h3>
-						<p>Id mea congue dictas, nec et summo mazim impedit. Vim te audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<a class="box_feat" href="#">
 						<i class="pe-7s-graph1"></i>
 						<h3>focus on success</h3>
-						<p>Id mea congue dictas, nec et summo mazim impedit. Vim te audiam impetus interpretaris, cum no alii option, cu sit mazim libris. </p>
 					</a>
 				</div>
 			</div>

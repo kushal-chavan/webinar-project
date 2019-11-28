@@ -40,13 +40,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Course Time</label>
-                                <select type="text" name="coursetime" class="form-control" placeholder="Ex: Microsoft,SAP...">
-                                        <option>11h 30min</option>
-                                        <option>21h 30min</option>
-                                        <option>31h 30min</option>
-                                        <option>41h 30min</option>
-                                        <option>51h 30min</option>
-                                </select>
+                                <input type="text" name="coursetime" class="form-control" placeholder="Ex: 1 Hour 20 min">
                             </div>
                         </div>
                     </div>
