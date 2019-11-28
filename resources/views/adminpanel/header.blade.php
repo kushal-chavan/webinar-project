@@ -64,6 +64,17 @@
                   </li>
                 </ul>
               </li>
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#webpages" data-parent="#exampleAccordion">
+                  <i class="fa fa-fw fa-pencil"></i>
+                  <span class="nav-link-text">My Pages</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="webpages">
+                  <li class="{{ Request::segment(3) === 'mypages' ? 'active' : null }}">
+                    <a href="{{ url('/adminarea/mypages/consulting') }}">Consulting</a>
+                  </li>
+                </ul>
+              </li>
               <li class="nav-item {{ Request::segment(2) === 'enrolledusers' ? 'active' : null }}" data-toggle="tooltip" data-placement="right" title="Enrolled Courses">
                   <a class="nav-link" href="{{ url('/adminarea/enrolledusers') }}">
                     <i class="fa fa-fw fa-archive"></i>

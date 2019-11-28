@@ -27,6 +27,7 @@ Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
     Route::get('/adminarea/users', 'AdminController@users')->name('users');
     Route::get('/adminarea/enrolledusers', 'AdminController@enrolledusers');
     Route::get('/adminarea/courses', 'AdminController@courses');
+    Route::get('/adminarea/mypages/consulting', 'AdminController@mypages_consulting');
     Route::get('/adminarea/addcourse', 'AdminController@addcourse');
     Route::get('/adminarea/profile', 'AdminController@profile');
     Route::post('/adminarea/addcourse', 'AdminController@postcourse');

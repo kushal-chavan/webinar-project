@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Courses;
+use App\Content;
 use App\User;
 use App\CourseEnroll;
 use DB;
@@ -147,5 +148,12 @@ class AdminController extends Controller
         $user->password = bcrypt($request->get('new-password'));
         $user->save();
         return redirect('/adminarea/changepassword')->with("cpsuccess","Password changed successfully !");
+    }
+
+    public function mypages_consulting(){
+
+        $id = 1;
+        $con = Content::findOrfail($id);
+        return view('adminpanel.mypages.consulting')->with('con', $con);
     }
 }
