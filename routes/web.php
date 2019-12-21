@@ -34,6 +34,8 @@ Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
     Route::get('/adminarea/profile', 'AdminController@profile');
     Route::post('/adminarea/addcourse', 'AdminController@postcourse');
     Route::delete('/adminarea/courses/{id}', 'AdminController@deletecourse');
+    // EDIT Course
+    Route::post('/adminarea/editcourse/{id}', 'AdminController@editcourse');
     Route::get('/adminarea/chat', 'AdminController@chat');
     //webinar
     Route::get('/adminarea/webinar', 'WebinarController@index');

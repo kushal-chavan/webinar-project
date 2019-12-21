@@ -78,7 +78,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="">
+        <form method="POST" action={{action('AdminController@editcourse', $course->id)}}>
           @csrf
           <div class="row">
               <div class="col-md-12">
@@ -112,7 +112,7 @@
                 </div>
             </div>
         </div>
-        <button type="submit" name="submit" class="btn btn-primary" data-dismiss="modal">Save</button>
+        <button type="submit" name="submit" class="btn btn-primary">Save</button>
         </form>
       </div>
       <div class="modal-footer">

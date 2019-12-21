@@ -79,6 +79,27 @@ class AdminController extends Controller
     return redirect('/adminarea/addcourse')->with('courseadded', 'Course Added Successfully');
     }
 
+    public function editcourse(Request $request, $id){
+        $this->validate($request, [
+            'course_title' => 'required',
+            'course_category' => 'required',
+            'course_time' => 'required',
+            'course_description' => 'required',
+            // 'cover_image' => 'image|nullable|max:1999'
+        ]            
+        );
+
+        $course = Courses::findOrfail($id);
+        $course->name = $request->input('course_title');
+        $course->category = $request->input('course_category');
+        $course->time = $request->input('course_time');
+        $course->description = $request->input('course_description');
+        // $course->cover_image = $fileNameToStore;
+        $course->save();
+        
+        return redirect('/adminarea/courses')->with('courseadded', 'Course Edited Successfully');
+    }
+
     public function deletecourse($id)
     {
         $delete = Courses::find($id);
